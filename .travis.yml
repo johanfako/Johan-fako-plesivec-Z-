@@ -1,0 +1,10 @@
+branches:
+  except:
+    - /^debug/
+language: python
+python:   "2.7"
+install:  bash .travis.install-dependencies.sh
+before_script: /usr/bin/python2.7 make-unicode.py
+script:
+  - /usr/bin/python2.7 test-btcr.py -v
+  - /usr/bin/python2.7 test-btcru.py -v
